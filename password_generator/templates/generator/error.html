@@ -1,0 +1,9 @@
+
+{% extends 'generator/base.html' %}
+
+
+{% block title %} error! {% endblock %}
+{% block content %}
+<center><h1>{{ error_message }}</h1>
+<a href="{% url 'password' %}" class="btn btn-primary">Back to Generator</a></center>
+{% endblock %}

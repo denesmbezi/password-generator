@@ -1,0 +1,27 @@
+{% extends 'generator/base.html' %}
+{% block title %}{% endblock %}
+
+{% block content %}
+ <center>
+      <form action="{% url 'password' %}" method="post">
+        {% csrf_token %}
+    <h3>Select the password content:</h3>
+    <input type="checkbox" name="uppercase" id="uppercase">
+    <label for="uppercase">Uppercase letters (A-Z)</label><br>
+
+    <input type="checkbox" name="lowercase" id="lowercase">
+    <label for="lowercase">Lowercase letters (a-z)</label><br>
+
+    <input type="checkbox" name="special" id="special">
+    <label for="special">Special characters (!@#$%^/~&amp;*()_+?:;|)</label><br>
+
+    <input type="checkbox" name="numbers" id="numbers">
+    <label for="numbers">Numbers (0-9)</label><br>
+
+    <h3>Select the password length:</h3>
+    <input type="number" name="length" id="length" min="8" max="32" value="14"><br><br>
+
+    <input type="submit" style="background-color: #0362fc;" value="Generate Password">
+  </form>
+ </center>
+{% endblock %}
